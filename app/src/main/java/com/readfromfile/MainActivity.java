@@ -65,7 +65,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String myString = tvText.getText().toString();
-                Pattern myPattern = Pattern.compile("'(.*?)'"); // regular expression for any text contained inside single quotes ''
+//                Pattern myPattern = Pattern.compile("'(.*?)'"); // regular expression for any text contained inside single quotes ''
+                Pattern myPattern = Pattern.compile("\\{(.*?)\\}"); // regular expression for any text contained inside curly brackets{}
+                // brackets are escaped using backslashes \ but backslash itself is a special character in java's string
+                // so it is also escaped by backslash, making it a double backslash \\
+
                 Matcher matcher = myPattern.matcher(myString);
                 if(matcher.find()){
                     Toast.makeText(MainActivity.this, matcher.group(), Toast.LENGTH_SHORT).show();
