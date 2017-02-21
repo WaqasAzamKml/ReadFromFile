@@ -1,0 +1,30 @@
+1. Limit login attempts
+* WP Limit Login Attempts
+https://wordpress.org/plugins/wp-limit-login-attempts/
+
+{short_code}
+
+2. Disable default WP login URL
+* WPs Hide Plugin
+https://wordpress.org/plugins/wp-limit-login-attempts/
+
+
+3. Update all Plugins & Themes
+(and deactivate/delete unused plugins)
+
+
+4. Create fake admin account
+(Create user with 'admin' username and downgrade it from 'Administrator' to 'Subscriber')
+
+
+5. Use strong password
+
+
+6. Use two factor authentication
+* The CLEF plugin
+https://wordpress.org/plugins/wpclef/
+
+
+7. Keep track of your dashboard activity
+* WP Security Audit Log
+https://wordpress.org/plugins/wp-security-audit-log/
