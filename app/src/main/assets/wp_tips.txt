@@ -12,6 +12,7 @@ https://wordpress.org/plugins/wp-limit-login-attempts/
 3. Update all Plugins & Themes
 (and deactivate/delete unused plugins)
 
+{another_short_code}
 
 4. Create fake admin account
 (Create user with 'admin' username and downgrade it from 'Administrator' to 'Subscriber')

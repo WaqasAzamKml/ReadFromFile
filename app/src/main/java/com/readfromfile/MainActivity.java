@@ -71,7 +71,14 @@ public class MainActivity extends AppCompatActivity {
                 // so it is also escaped by backslash, making it a double backslash \\
 
                 Matcher matcher = myPattern.matcher(myString);
-                if(matcher.find()){
+
+                //This if condition finds only first occurrence of the provided pattern's match.
+//                if(matcher.find()){
+//                    Toast.makeText(MainActivity.this, matcher.group(), Toast.LENGTH_SHORT).show();
+//                }
+
+                //This loops through the input string and finds all occurrences of the provided pattern.
+                while(matcher.find()){
                     Toast.makeText(MainActivity.this, matcher.group(), Toast.LENGTH_SHORT).show();
                 }
 
