@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnRead, btnScan;
     TextView tvText;
-//    EditText etScanString;
+    //    EditText etScanString;
     ListView lvShortCodes;
 
     @Override
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void readText(){
+    public void readText() {
 
         BufferedReader reader = null;
         StringBuilder text = new StringBuilder();
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void findShortCodes(){
+    public void findShortCodes() {
         String myString = tvText.getText().toString();
 //                Pattern myPattern = Pattern.compile("'(.*?)'"); // regular expression for any text contained inside single quotes ''
         Pattern myPattern = Pattern.compile("\\{(.*?)\\}"); // regular expression for any text contained inside curly brackets{}
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 //                }
 
         //This loops through the input string and finds all occurrences of the provided pattern.
-        while(matcher.find()){
+        while (matcher.find()) {
             Toast.makeText(MainActivity.this, String.valueOf(matcher.start()) + " value " + matcher.group() + String.valueOf(matcher.end()), Toast.LENGTH_SHORT).show();
             //Toast.makeText(MainActivity.this, , Toast.LENGTH_SHORT).show();
         }
