@@ -1,6 +1,7 @@
 package com.readfromfile;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,9 +33,11 @@ public class PatternReplacer {
     public boolean addFile(String filePath){
         try {
             reader = new BufferedReader(new InputStreamReader(context.getAssets().open(filePath)));
+            Log.d("addFile", "Adding file successful");
             return true;
         } catch (IOException e) {
             e.printStackTrace();
+            Log.d("addFile", "Adding file was not successful");
             return false;
         }
     }
@@ -49,14 +52,17 @@ public class PatternReplacer {
     // also closes the reader if it is still open (providing data & memory leakages.
     public String readText(){
         String line;
+        text = new StringBuilder();
         try {
             while((line = reader.readLine()) != null){
                 text.append(line);
                 text.append("\n");
             }
+            Log.d("readText", "Reading text successful.");
             return text.toString();
         } catch (IOException e) {
             e.printStackTrace();
+            Log.d("readText", "Reading text was not successful.");
             return null;
         } finally {
             if(reader != null){
