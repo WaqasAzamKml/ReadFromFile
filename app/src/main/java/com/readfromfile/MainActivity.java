@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,9 +16,9 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
 
     Button btnRead, btnScan;
-    TextView tvText;
+    TextView tvText, tvReplacedText;
     //    EditText etScanString;
-    ListView lvShortCodes;
+    //ListView lvShortCodes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
         btnRead = (Button) findViewById(R.id.btnReadText);
         btnScan = (Button) findViewById(R.id.btnScanText);
-        tvText = (TextView) findViewById(R.id.tvText);
+        tvText = (TextView) findViewById(R.id.tvOriginalText);
+        tvReplacedText = (TextView) findViewById(R.id.tvReplacedText);
 //        etScanString = (EditText) findViewById(R.id.etScanString);
-        lvShortCodes = (ListView) findViewById(R.id.lvShortCodes);
+        //lvShortCodes = (ListView) findViewById(R.id.lvShortCodes);
 
         btnRead.setOnClickListener(new View.OnClickListener() {
             @Override
