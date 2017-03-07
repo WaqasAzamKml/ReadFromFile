@@ -83,14 +83,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findShortCodes() {
-        String myString = tvText.getText().toString();
         replacedString = tvText.getText().toString();
 //                Pattern myPattern = Pattern.compile("'(.*?)'"); // regular expression for any text contained inside single quotes ''
         Pattern myPattern = Pattern.compile("\\{(.*?)\\}"); // regular expression for any text contained inside curly brackets{}
         // brackets are escaped using backslashes \ but backslash itself is a special character in java's string
         // so it is also escaped by backslash, making it a double backslash \\
 
-        Matcher matcher = myPattern.matcher(myString);
+        Matcher matcher = myPattern.matcher(replacedString);
 
         //This if condition finds only first occurrence of the provided pattern's match.
 //                if(matcher.find()){
@@ -101,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         while (matcher.find()) {
             Toast.makeText(MainActivity.this, String.valueOf(matcher.start()) + " value " + matcher.group() + String.valueOf(matcher.end()), Toast.LENGTH_SHORT).show();
             replacedString = replacedString.replace(matcher.group(),shortCodeExplanations.get(matcher.group()));
-            tvReplacedText.setText(replacedString);
         }
+        tvReplacedText.setText(replacedString);
     }
 }
