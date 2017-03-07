@@ -18,13 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnRead, btnScanNReplace;
     TextView tvText, tvReplacedText;
-    StringBuilder text, replacedText;
     HashMap<String, String> shortCodeExplanations; // HashMap containing short-codes as keys and their explanations as values
-    HashMap<String, String> shortCodesFound = null; // HashMap containing short-codes' count as a key and short-code itself as a value
     String replacedString;
-    int shortCodesCount = 0;
-    //    EditText etScanString;
-    //ListView lvShortCodes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         btnScanNReplace = (Button) findViewById(R.id.btnScanText);
         tvText = (TextView) findViewById(R.id.tvOriginalText);
         tvReplacedText = (TextView) findViewById(R.id.tvReplacedText);
-//        etScanString = (EditText) findViewById(R.id.etScanString);
-        //lvShortCodes = (ListView) findViewById(R.id.lvShortCodes);
 
         // HashMap containing short-codes as keys and their explanations as values
         shortCodeExplanations = new HashMap<>();
@@ -62,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public void readText() {
 
         BufferedReader reader = null;
-        text = new StringBuilder();
+         StringBuilder text = new StringBuilder();
         try {
             reader = new BufferedReader(
                     new InputStreamReader(getAssets().open("wp_tips.txt")));
@@ -106,10 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
         //This loops through the input string and finds all occurrences of the provided pattern.
         while (matcher.find()) {
-//            shortCodesCount+=1;
-//            shortCodesFound.put(String.valueOf(shortCodesCount),matcher.group());
             Toast.makeText(MainActivity.this, String.valueOf(matcher.start()) + " value " + matcher.group() + String.valueOf(matcher.end()), Toast.LENGTH_SHORT).show();
-            //Toast.makeText(MainActivity.this, , Toast.LENGTH_SHORT).show();
             replacedString = replacedString.replace(matcher.group(),shortCodeExplanations.get(matcher.group()));
             tvReplacedText.setText(replacedString);
         }
